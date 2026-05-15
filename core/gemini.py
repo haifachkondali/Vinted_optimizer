@@ -4,6 +4,12 @@ from .models import ItemInput, AnalysisOutput
 from .constants import STATE_BOOST, HIGH_DEMAND, MID_DEMAND
 from .utils import clean_text, extract_keywords, infer_brand, infer_category, demand_level
 
+# Ajouter après les imports existants
+from .gemini_client import (
+    gemini_rewrite_description,
+    gemini_build_titles,
+    gemini_available,
+)
 
 def attractiveness_score(item: ItemInput, brand: str, category: str) -> float:
     """Calculate item attractiveness score (0-10).
@@ -161,18 +167,32 @@ def sales_potential_label(score: float) -> str:
     return "🔴 Potentiel limité — travail prioritaire avant relance."
 
 
-def analyse_item(item: ItemInput) -> AnalysisOutput:
+def analyse_item(item: ItemInput, use_ai: bool = True) -> AnalysisOutput:
     brand    = infer_brand(item)
     category = infer_category(item)
     level    = demand_level(brand, category)
     attract  = attractiveness_score(item, brand, category)
-    titles   = build_titles(item, brand, category)
-    desc     = rewrite_description(item, brand, category)
-    prices   = pricing_strategy(item, level)
-    photos   = photo_analysis(item)
-    marketing = marketing_strategy(item, brand, category)
-    scores   = compute_global_score(attract, photos["score"], item.titre, item.prix_actuel)
 
+    # ── Titres : Gemini en priorité, fallback template ──────
+    titles = None
+    if use_ai and gemini_available():
+        titles = gemini_build_titles(item, brand, category)
+    if not titles:
+        titles = build_titles(item, brand, category)
+
+    # ── Description : Gemini en priorité, fallback template ─
+    desc = None
+    if use_ai and gemini_available():
+        desc = gemini_rewrite_description(item, brand, category)
+    if not desc:
+        desc = rewrite_description(item, brand, category)
+
+    # ── Suite inchangée ──────────────────────────────────────
+    prices    = pricing_strategy(item, level)
+    photos    = photo_analysis(item)
+    marketing = marketing_strategy(item, brand, category)
+    scores    = compute_global_score(attract, photos["score"], item.titre, item.prix_actuel)
+    # ... reste identique
     problems = []
     if len(clean_text(item.titre)) < 15:
         problems.append("Titre trop court pour le SEO Vinted.")

@@ -38,6 +38,11 @@ console = Console(force_terminal=True)
 
 @app.command()
 def run(
+    # Ajouter dans les paramètres de run()
+    use_ai: bool = typer.Option(
+        True, "--ai/--no-ai",
+        help="Utiliser Gemini AI pour titres et descriptions (défaut : activé si clé présente)"
+    ),
     # ── Source de données (au choix) ──────────────────────────
     user: Optional[str] = typer.Option(None, "--user", "-u",
         help="Pseudo Vinted -> scraping automatique"),
@@ -106,7 +111,7 @@ def run(
 
     try:
         for idx, item in enumerate(track(items[:max_items], description="Analyse en cours..."), start=1):
-            result = analyse_item(item)
+            result = analyse_item(item, use_ai=use_ai)
             pairs.append((item, result))
             score = result.score_global["score_global"]
             table.add_row(str(idx), item.titre[:38], f"{score}/10", result.potentiel_vente)
