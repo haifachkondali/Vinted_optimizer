@@ -88,49 +88,59 @@ def _find_col(row: dict, *candidates: str) -> str:
 
 # ─── Parseur items/annonces ───────────────────────────────────
 def parse_items_html(html_content: str) -> List[ItemInput]:
-    """Parse items from Vinted GDPR export HTML (microdata format)."""
-    import re
+    """Parse items from Vinted GDPR export HTML (microdata + img format)."""
     from html import unescape
-    
+
     items = []
-    
+
     # Split by cell divs
-    cells = re.findall(r'<div class="cell" itemscope>.*?(?=<div class="cell" itemscope>|$)', 
-                      html_content, re.DOTALL)
-    
+    cells = re.findall(
+        r'<div class="cell" itemscope>.*?(?=<div class="cell" itemscope>|$)',
+        html_content, re.DOTALL
+    )
+
     for cell in cells:
-        item_data = {}
-        
-        # Extract title from cell-header
+        item_data: dict = {}
+
+        # ── Titre depuis cell-header ──────────────────────────
         title_match = re.search(r'<div class="cell-header"[^>]*>([^<]+)</div>', cell)
         if title_match:
             item_data['title'] = unescape(title_match.group(1).strip())
-        
-        # Extract all itemprop values
+
+        # ── Propriétés itemprop (description, brand, status…) ─
         prop_matches = re.findall(
             r'<span itemprop="([^"]+)">([^<]+)</span>',
             cell
         )
         for prop, value in prop_matches:
             item_data[prop] = unescape(value.strip())
-        
-        # Only add if we have a title and at least description
+
+        # ── Photos : toutes les <img> dans la cellule ─────────
+        img_srcs = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', cell)
+        # Filtrer les icônes/logos (trop petites URLs génériques)
+        images = [
+            unescape(src) for src in img_srcs
+            if not any(skip in src.lower() for skip in [
+                'logo', 'icon', 'avatar', 'sprite', 'flag', 'badge',
+                'placeholder', '1x1', 'pixel'
+            ])
+        ]
+        item_data['images'] = images
+
+        # ── Ne garder que si on a un titre ───────────────────
         if item_data.get('title'):
-            # Extract price as float (remove currency)
-            price_str = item_data.get('order_value', '')
-            prix = _safe_float(price_str)
-            
+            prix = _safe_float(item_data.get('order_value', '') or item_data.get('price', ''))
             items.append(ItemInput(
                 titre       = item_data.get('title', ''),
                 description = item_data.get('description', ''),
                 prix_actuel = prix,
                 marque      = item_data.get('brand') or None,
                 etat        = item_data.get('status') or None,
-                categorie   = None,
-                images      = [],
+                categorie   = item_data.get('category') or None,
+                images      = item_data.get('images', []),
             ))
-    
-    # Fallback to table parsing if no items found via microdata
+
+    # ── Fallback tableau HTML si microdata vide ────────────────
     if not items:
         rows = _parse_html_table(html_content)
         for row in rows:
@@ -149,7 +159,7 @@ def parse_items_html(html_content: str) -> List[ItemInput]:
                 categorie   = _find_col(row, "catégorie", "categorie", "type") or None,
                 images      = [],
             ))
-    
+
     return items
 
 
@@ -165,7 +175,6 @@ def _read_html(path: Path) -> str:
 
 def _find_items_html(root: Path) -> Optional[Path]:
     """Cherche le bon index.html dans le dossier d'export."""
-    # Dossiers candidats (noms selon les versions Vinted)
     candidates = [
         "items", "annonces", "articles", "catalog",
         "listings", "products", "mes_annonces"
@@ -174,28 +183,19 @@ def _find_items_html(root: Path) -> Optional[Path]:
         p = root / name / "index.html"
         if p.exists():
             return p
-    # Fallback : cherche tous les index.html et prend le plus riche en données
     all_html = list(root.rglob("index.html"))
     if all_html:
-        # Trie par taille décroissante (le plus gros = probablement les annonces)
         return max(all_html, key=lambda p: p.stat().st_size)
     return None
 
 
 def load_from_export_folder(folder: Path) -> List[ItemInput]:
-    """Load items from an extracted Vinted GDPR export folder.
-    
-    Args:
-        folder: Path to extracted export folder
-        
-    Returns:
-        List of ItemInput objects from HTML tables
-    """
+    """Load items from an extracted Vinted GDPR export folder."""
     html_path = _find_items_html(folder)
     if not html_path:
-        print(f"[WARN] Aucun fichier HTML trouve dans {folder}")
+        print(f"[WARN] Aucun fichier HTML trouvé dans {folder}")
         return []
-    print(f"[INFO] Fichier annonces trouve : {html_path}")
+    print(f"[INFO] Fichier annonces trouvé : {html_path}")
     html = _read_html(html_path)
     items = parse_items_html(html)
     print(f"[OK] {len(items)} article(s) extrait(s) de l'export HTML.")
@@ -203,19 +203,11 @@ def load_from_export_folder(folder: Path) -> List[ItemInput]:
 
 
 def load_from_zip(zip_path: Path, extract_to: Optional[Path] = None) -> List[ItemInput]:
-    """Load items directly from a Vinted GDPR export ZIP file.
-    
-    Args:
-        zip_path: Path to ZIP export file
-        extract_to: Directory to extract to (optional, defaults to parent folder)
-        
-    Returns:
-        List of ItemInput objects from HTML tables
-    """
+    """Load items directly from a Vinted GDPR export ZIP file."""
     if extract_to is None:
         extract_to = zip_path.parent / zip_path.stem
 
-    print(f"[INFO] Decompression de {zip_path.name} -> {extract_to}")
+    print(f"[INFO] Décompression de {zip_path.name} -> {extract_to}")
     with zipfile.ZipFile(zip_path, "r") as z:
         z.extractall(extract_to)
 
