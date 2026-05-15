@@ -88,24 +88,68 @@ def _find_col(row: dict, *candidates: str) -> str:
 
 # ─── Parseur items/annonces ───────────────────────────────────
 def parse_items_html(html_content: str) -> List[ItemInput]:
-    rows = _parse_html_table(html_content)
+    """Parse items from Vinted GDPR export HTML (microdata format)."""
+    import re
+    from html import unescape
+    
     items = []
-    for row in rows:
-        titre = (
-            _find_col(row, "titre", "title", "nom", "article", "annonce")
-            or _find_col(row, "item")
+    
+    # Split by cell divs
+    cells = re.findall(r'<div class="cell" itemscope>.*?(?=<div class="cell" itemscope>|$)', 
+                      html_content, re.DOTALL)
+    
+    for cell in cells:
+        item_data = {}
+        
+        # Extract title from cell-header
+        title_match = re.search(r'<div class="cell-header"[^>]*>([^<]+)</div>', cell)
+        if title_match:
+            item_data['title'] = unescape(title_match.group(1).strip())
+        
+        # Extract all itemprop values
+        prop_matches = re.findall(
+            r'<span itemprop="([^"]+)">([^<]+)</span>',
+            cell
         )
-        if not titre:
-            continue
-        items.append(ItemInput(
-            titre       = titre,
-            description = _find_col(row, "description", "desc", "détail"),
-            prix_actuel = _safe_float(_find_col(row, "prix", "price", "montant", "tarif")),
-            marque      = _find_col(row, "marque", "brand") or None,
-            etat        = _find_col(row, "état", "etat", "condition", "statut") or None,
-            categorie   = _find_col(row, "catégorie", "categorie", "type") or None,
-            images      = [],
-        ))
+        for prop, value in prop_matches:
+            item_data[prop] = unescape(value.strip())
+        
+        # Only add if we have a title and at least description
+        if item_data.get('title'):
+            # Extract price as float (remove currency)
+            price_str = item_data.get('order_value', '')
+            prix = _safe_float(price_str)
+            
+            items.append(ItemInput(
+                titre       = item_data.get('title', ''),
+                description = item_data.get('description', ''),
+                prix_actuel = prix,
+                marque      = item_data.get('brand') or None,
+                etat        = item_data.get('status') or None,
+                categorie   = None,
+                images      = [],
+            ))
+    
+    # Fallback to table parsing if no items found via microdata
+    if not items:
+        rows = _parse_html_table(html_content)
+        for row in rows:
+            titre = (
+                _find_col(row, "titre", "title", "nom", "article", "annonce")
+                or _find_col(row, "item")
+            )
+            if not titre:
+                continue
+            items.append(ItemInput(
+                titre       = titre,
+                description = _find_col(row, "description", "desc", "détail"),
+                prix_actuel = _safe_float(_find_col(row, "prix", "price", "montant", "tarif")),
+                marque      = _find_col(row, "marque", "brand") or None,
+                etat        = _find_col(row, "état", "etat", "condition", "statut") or None,
+                categorie   = _find_col(row, "catégorie", "categorie", "type") or None,
+                images      = [],
+            ))
+    
     return items
 
 

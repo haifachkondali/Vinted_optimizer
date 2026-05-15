@@ -1,5 +1,11 @@
 """Tests unitaires — pipeline d'analyse."""
 
+import sys
+from pathlib import Path
+
+# Add parent directory to path so we can import core
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from core.models import ItemInput
 from core.analyser import analyse_item
 from core.utils import infer_brand, infer_category, demand_level
