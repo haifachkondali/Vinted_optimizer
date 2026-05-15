@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>export des données personnelles de Vinted</title>
+    <style type="text/css">
+      html {
+  font-family: "V-Inter", "Helvetica Neue", "Helvetica-Neue", "Arial",
+    sans-serif;
+}
+
+body {
+  background-color: #ebedee;
+  margin: 0;
+}
+
+a {
+  color: #007782;
+  text-decoration: none;
+}
+
+.header {
+  background-color: white;
+}
+
+.banner {
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.content-wrapper {
+  width: 650px;
+  margin: auto;
+}
+
+.logo {
+  max-height: 48px;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  background: #1111;
+  border: 0;
+  margin: 16px 0;
+}
+
+.spacer {
+  padding: 16px 0 0 0;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.cell-header {
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.cell-header--large {
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.cell-description {
+  color: #666;
+  line-height: 22px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.cell-images {
+  display: flex;
+}
+
+.cell-images__item {
+  flex: 0.2;
+}
+
+.cell-images__item a {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.cell-images__item img,
+.cell-images__item video {
+  width: 90%;
+}
+
+.cell-table {
+  color: #666;
+  margin: 8px 0 0 0;
+  padding-left: 24px;
+}
+
+.cell-table li {
+  margin-bottom: 6px;
+}
+
+.message-image-container {
+  width: 20%;
+  height: 120px;
+  display: inline-block;
+}
+
+.message-image-container img {
+  display: flex;
+  height: 100%;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-indent {
+  text-indent: 2em;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="content-wrapper">
+        <div class="banner">
+          <a href="../index.html"><img class="logo" src="data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iODMiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA4MyA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTYuNjQyIDExYy0uMjg1IDAtLjYzMS4yNC0xLjU2MyAxLjA1Mi0uMzMxLjEyLS42OTIuMDMtMS4xMTMuNjc3LTIuMzc1IDMuNDEzLTQuMjI0IDE2LjE3Ni01LjgwMyAxOS44Ni0uMzE2LTEuNTk0LS45NzctMTEuOTY4LTEuMjMzLTE0LjgwOS0uMDMtLjUyNi4wMy0xLjE4OC4wMy0xLjU3OCAwLTIuNjE2LS41Ny0zLjk0LTMuMTg3LTMuOTQtMS4zMjMgMC0yLjYzLjQ4Mi0zLjMyMiAxLjM1NC0uMzMuNDUtLjQ1MS43ODItLjQ1MSAxLjU5MyAwIDUuNDI4IDEuMjkzIDE0LjMyNyAyLjczNiAyMC4xMy40NTEgMS44MiAyLjA3NSAyLjE2NSAzLjYwOCAyLjE2NS43MjIgMCAxLjQ0My0uMDkgMi40NjYtLjYwMSAzLjU0Ny0xLjczIDQuNDk1LTYuNDUgNS40MTItMTEuMDM1LjE2NS0uODI3Ljk5Mi00LjgyNiAxLjM4My02LjkzLjUyNi0yLjg3MiAxLjEyNy02LjExOSAxLjQ4OC03LjMwNy4xMi0uMzYtLjEwNS0uNjMxLS40NS0uNjMxWm02MC4yNTQgMTIuOTg5Yy0uNDggMy41OTMtMi4zMTUgOS43NDItNC4zNiA5Ljc0Mi0uNTg2IDAtLjg4Ni0uNjc3LS44ODYtMS41MDQgMC0yLjM2IDEuNTkzLTcuMDggNS4yNDYtOC4yMzhabS0xNy44NDQgNC4wNDRjLjQ2Ni0yLjEwNSAyLjQ4LTUuMzIyIDQuMjg0LTUuMzIyLjMzIDAgLjUxMS4yMS40NjYuNzIyLS4xMDUgMS41OTMtMS4yOTMgNC4yNC00Ljc1IDQuNlpNODMgMTIuNjIzYzAtLjYzLS4zOS0xLjE4Ny0xLjI3OC0xLjE4Ny0uNzIxIDAtMS41NjMuMzYtMi4wOS44MTItLjYzLS4xNS0xLjQ3My4zMy0xLjU3OC45MDItLjU0MSAyLjU0LS43ODIgNS4xODYtMS4wODIgNy4zNjYtMy42MzguMzMtNi40MDUgMi4zNDUtNy43NTggNS42MzhhMTIuODI0IDEyLjgyNCAwIDAgMS0uNzgxIDEuNTc4Yy0xLjkyNSAzLjI3OC00LjMzIDUuMTcyLTYuNjkgNS4xNzItMS43MyAwLTIuNzIxLTEuMjE4LTIuODQyLTIuODcyLjYxNy4xNSAxLjIwMy4yMjYgMS43NDQuMjI2IDMuOTA5IDAgNS44OTMtMy42OTggNS44OTMtNi4xOTQgMC0yLjQyLTEuNjIzLTMuNjUzLTQuMDI5LTMuNjUzLTQuMzkuMDMtOC4wNDMgNS4yNjItOC4wNDMgMTAuMDQyIDAgMy4zOTggMS41MTkgNi4wODkgNC45NzcgNi4wODkgMi42NzUgMCA2LjM3NC0xLjQ3MyA4Ljg4NC01LjI2Mi0uMTY1IDIuNjkxLjU0MSA1LjMyMiAyLjg0MiA1LjU3OCAxLjI5My4xMiAzLjYzOC0uNjkyIDUuMjAxLTMuODc5LjEyIDIuNjQ2Ljk2MiAzLjkyNCAxLjYzOSAzLjkyNCAxLjIxOCAwIDEuOTg0LS40MzYgMi45MzEtLjQ4MS4zMDEtLjAxNS4zOTEtLjI4Ni4zOTEtLjUyNiAwLS4zOTEtLjQ1LTEuODM1LS40NS0zLjkxIDAtMy4xNzEuNjMtOC4xMzIgMS45NjktMTguMjUuMDYtLjI0LjE1LS43MzcuMTUtMS4xMTJabS02MC4xMzQgNi40OGMxLjE3MyAwIDIuMTM1LS45NjIgMi4xMzUtMi4wMTQgMC0xLjM4My0uNDIxLTIuNzA2LTEuOTg1LTIuNzA2LTEuMDY3IDAtMi45MTYgMS4yMDItMi45MTYgMi4yNCAwIDEuMjE3IDEuMzM4IDIuNDggMi43NjYgMi40OFptMzEuOTc2LS44NDJjLS42NzYtLjEzNS0xLjQxMy0uMTUtMi4xNjUtLjE1LjAzLS41MjYtLjAxNS0xLjUzNCAwLTIuNDIgMC0uMTM2LjA2LS4zNzYuMDYtLjY3NyAwLS4zLS4wNi0uNjMxLS4yNy0uOTMyLjA3NS0uMjEuMTItLjM5MS4xMi0uNTI2IDAtLjcyMi0xLjA2Ny0uOTkyLTIuMDc0LS45OTItLjg3MiAwLTEuNjg0LjMxNS0xLjk3IDEuMjYyLS40NjYgMS42NjktLjYwMSAyLjM5LS43MjEgNC4xMzQtMS4wNTMuMDYtMy4wOTcuMDc2LTMuMDUyLjcyMi4xMiAxLjY2OSAxLjcyOSAyLjIxIDIuODg2IDIuMjQtLjEzNSA0LjU4NS0zLjk2OSAxMi4wMTItNS4xNTYgMTIuMDEyLS4yMjYgMC0uMzE2LS4zNi0uMzE2LTEuMTI4IDAtMS41MDMuMzE2LTMuNTE4LjMxNi01LjY1MiAwLTEuMzIzLS4xMzYtMi41MjYtLjU0MS0zLjI5My0uNTEyLS45MTctMi4xOTUtMS4zNjgtMy41MTgtMS4zNjgtLjUxMiAwLS45MzIuMDYtMS4yNjMuMTgtMi4xOTUuODg4LTQuMDQ0IDUuODc5LTQuNzM2IDYuOTkxLjMzMS0zLjAyMS44MjctNS4zODIuODI3LTYuNjE0IDAtLjY5Mi0uNjE2LTEuMzA4LTEuMzA4LTEuMzA4LS4yNyAwLS41MS4wOS0uNzM2LjMtLjk5My4zNjEtMi4zMTYgMC0yLjU0MSAxLjQxMy0uMDYuMzc2LS4xMzUuODI3LS4xNjUgMS4zMzktLjI0MSAzLjY2OC0zLjkxIDEwLjQ2My01Ljc4OCAxMC40NjMtLjQ2NiAwLS41NzItLjYwMS0uNTcyLTEuMzY4IDAtMi41NTYgMS4zMjMtNy45MzggMS4zNTMtOS4wMi4wNzYtLjE2Ni4xMi0uMzYxLjEyLS41MjYgMC0xLjAyMy0xLjIwMi0yLjAxNS0yLjQzNS0yLjAxNS0uMzYgMC0uNjE2LS4wNzUtLjkwMi0uMDc1LS4xOCAwLS4zNzYuMDMtLjU4Ni4xNjUtMS4zNjguODcyLTIuNTcgNS44NjMtMi41NyA4LjkzIDAgMy4zODMgMS45NjkgNi4wODkgNS4wOTYgNi4wODkgMi4yNCAwIDQuMTM0LTIuMDQ1IDUuNzQyLTQuODcxIDAgLjQzNi0uMDkgMi41NTUgMCAzLjc1OC4wNi44MjcuOTE3LjQ2NiAxLjk1NS44ODcuMzkuMzMuNzUxLjQ4MSAxLjA2Ny40ODEuNTI2IDAgLjkzMi0uNDY2IDEuMjMzLTEuMjc4IDEuMjMzLTMuMzgyIDQuMjEtMTAuOTc0IDUuMDUxLTEwLjk3NC42MzEgMC0uMDE1IDQuODg2LS4wMTUgNy4zMDYgMCAxLjM4My4xMzUgMi41NzEuNjE2IDMuMDgyLjg4Ny45MzIgMS44MzQgMS4zODMgMi44MjcgMS4zODMgMi4xOTUgMCA0LjUxLTIuMzQ1IDYuNDA0LTYuNzA1LS4xMiAxLjg2NC0uMTM1IDIuNDM2LS4xMzUgMy4wODIgMCAxLjA4Mi4wNiAyLjI4NS4yMSAzLjE1Ny4wOS40MjEuMTM2LjcyMi41MTEuOTkyLjUxMS4yODYuOTc3LjQ1MSAxLjIzMy42MzIuNTg2LjI4NS41NDEuNDM2IDEuMzUzLjQzNi4yODYgMCAuNjc3LS4yNy43MzctLjkxNy43MjEtNy4xNDEgMS40NzMtMTUuOTUgMS40NzMtMTUuOTUuNDgxLS4wMTYgMS44NS0uMzYyIDMuMTI3LS41MTIuNTQxLS4wNiAxLjE4OC0uMzkgMS4xODgtLjc4MiAwLS4zOS0uODU3LTEuMTQyLTEuOTctMS4zODNaIiBmaWxsPSIjMDA3NzgyIi8+PC9zdmc+Cg==" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="cell">
+  <div class="cell-header">
+    Articles favoris
+  </div>
+
+  
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          jenna.bnh:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3481698784">
+          Basket Jordan 
+        </a>:
+        <span itemprop="created_at">
+          2023-09-17 21:32:58 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          louna8709:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3078598291">
+          Robe décolleté 
+        </a>:
+        <span itemprop="created_at">
+          2023-10-26 01:34:21 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mel200410:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3664605470">
+          manteau 
+        </a>:
+        <span itemprop="created_at">
+          2023-10-26 18:32:20 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mel200410:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3031050600">
+          sac à main 
+        </a>:
+        <span itemprop="created_at">
+          2023-10-26 18:32:41 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          helenedomalain:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3666705477">
+          Jogging marron jennyfer 
+        </a>:
+        <span itemprop="created_at">
+          2023-10-26 23:42:12 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          jade.thrn11:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3663752423">
+          jogging tricouleur
+        </a>:
+        <span itemprop="created_at">
+          2023-10-26 23:47:06 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          user122222:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3680669928">
+          falda berskha
+        </a>:
+        <span itemprop="created_at">
+          2023-10-29 14:23:34 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          doddyyy:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3680767362">
+          Jean bershka 
+        </a>:
+        <span itemprop="created_at">
+          2023-10-29 18:00:04 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          im2x:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3673200285">
+          Basket jordan
+        </a>:
+        <span itemprop="created_at">
+          2023-10-29 18:30:24 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          maevacoco1:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3684064206">
+          Maillot deux pièces vert 
+        </a>:
+        <span itemprop="created_at">
+          2023-10-29 22:29:54 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          manonn943:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3677998966">
+          Maillot de bain / Bikini asymétrique bleu
+        </a>:
+        <span itemprop="created_at">
+          2023-10-29 22:35:09 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          tessa_25066:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3706668381">
+          Crop top marron 
+        </a>:
+        <span itemprop="created_at">
+          2023-11-04 12:51:06 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          cuitadinha:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3652759000">
+          Jordan True Flight Black
+        </a>:
+        <span itemprop="created_at">
+          2023-11-06 01:07:31 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          lilalalla2309:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/2247342517">
+          Jordan flight
+        </a>:
+        <span itemprop="created_at">
+          2023-11-06 01:08:41 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          and.cs:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3722989681">
+          Top canalé 
+        </a>:
+        <span itemprop="created_at">
+          2023-11-06 22:53:04 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          victoria131113:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3728461501">
+          Falda negra
+        </a>:
+        <span itemprop="created_at">
+          2023-11-08 09:29:43 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mariondc055:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3723802065">
+          top marron 
+        </a>:
+        <span itemprop="created_at">
+          2023-11-08 09:34:36 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          gjeffr:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/842503482">
+          Echarpe noir en laine
+        </a>:
+        <span itemprop="created_at">
+          2023-11-08 11:03:16 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          adele_sm:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3387641887">
+          Jean Bershka
+        </a>:
+        <span itemprop="created_at">
+          2023-11-08 21:16:15 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          vanessa_elfo:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3478410700">
+          Jeans 2 couleur large y2k année 2000
+        </a>:
+        <span itemprop="created_at">
+          2023-11-23 00:07:55 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          manonchmbrt:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3790852094">
+          Pantalon large noir
+        </a>:
+        <span itemprop="created_at">
+          2023-11-23 08:59:20 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          may0806:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3829922996">
+          Jean pull and bear
+        </a>:
+        <span itemprop="created_at">
+          2023-12-01 11:24:18 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          tiffany.mrnl:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4079167504">
+          Jean Baggy Carpenter
+        </a>:
+        <span itemprop="created_at">
+          2024-02-10 21:02:27 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          909kaat:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4090437431">
+          Bikini Asos sin usar. Talla S.
+        </a>:
+        <span itemprop="created_at">
+          2024-02-12 02:23:24 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          emma.pkl:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4083821869">
+          Crop top noir 
+        </a>:
+        <span itemprop="created_at">
+          2024-02-12 02:41:22 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          fontanel1978:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4084023872">
+          top bleu clair 
+        </a>:
+        <span itemprop="created_at">
+          2024-02-12 02:41:58 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          stolemystyle:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4092075623">
+          Top asymétrique stretch 
+        </a>:
+        <span itemprop="created_at">
+          2024-02-12 20:57:13 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          jutomlinson333:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4092299589">
+          Pull corps top Zara rayé 
+        </a>:
+        <span itemprop="created_at">
+          2024-02-12 20:57:26 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          15federica15:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4095478357">
+          Portafogli uomo Roccobarocco - Nuovo
+        </a>:
+        <span itemprop="created_at">
+          2024-02-13 01:23:33 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          cln.zoe44:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4176574684">
+          Culotte de bain taille haute 
+        </a>:
+        <span itemprop="created_at">
+          2024-03-03 19:31:30 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          shirley.prr:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4197361093">
+          Maillot de bain beige 
+        </a>:
+        <span itemprop="created_at">
+          2024-03-09 00:33:48 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          10011977:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4192324740">
+          Lots de 2 bas de maillot de bain Taille S
+        </a>:
+        <span itemprop="created_at">
+          2024-03-09 00:44:34 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          an4is.mrtnnn:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4193350877">
+          Top d’été
+        </a>:
+        <span itemprop="created_at">
+          2024-03-09 00:45:58 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          shirley.prr:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4197381781">
+          Maillot de bain noir bandeau
+        </a>:
+        <span itemprop="created_at">
+          2024-03-10 17:12:15 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          letigarcia2001:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3718852812">
+          Top manga corta deporte
+        </a>:
+        <span itemprop="created_at">
+          2024-03-10 23:03:05 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          bidault.margot:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/2822004608">
+          crop top hopegirl
+        </a>:
+        <span itemprop="created_at">
+          2024-03-10 23:03:42 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ju._.lie18:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3226755190">
+          Top avec écriture 
+        </a>:
+        <span itemprop="created_at">
+          2024-03-10 23:03:53 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          yssss.777:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4229280969">
+          crop top bershka 
+        </a>:
+        <span itemprop="created_at">
+          2024-03-17 01:06:47 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          lison260420:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4230510004">
+          haut à rayures 
+        </a>:
+        <span itemprop="created_at">
+          2024-03-17 01:07:25 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          c_aamillee:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4301980980">
+          débardeur court rayé
+        </a>:
+        <span itemprop="created_at">
+          2024-04-03 17:51:19 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          noemieee333:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4360829154">
+          T-shirt BERSKA taille S
+        </a>:
+        <span itemprop="created_at">
+          2024-04-14 12:24:01 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          noemieee333:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4360810826">
+          T-shirt Berska
+        </a>:
+        <span itemprop="created_at">
+          2024-04-14 12:24:40 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          camcami1:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4358461426">
+          Top à rayures
+        </a>:
+        <span itemprop="created_at">
+          2024-04-14 12:35:35 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          dorienne68:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4354072414">
+          T-shirt Bershka vert , XS
+        </a>:
+        <span itemprop="created_at">
+          2024-04-14 12:43:03 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          loualcaide:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4356106676">
+          Pull Bershka, bleu pâle
+        </a>:
+        <span itemprop="created_at">
+          2024-04-14 17:20:51 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          chiaraa.dgstn:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4372936699">
+          T-shirts à col
+        </a>:
+        <span itemprop="created_at">
+          2024-04-17 16:52:50 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          alexx1andra:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4372237494">
+          Top di Bershka
+        </a>:
+        <span itemprop="created_at">
+          2024-04-18 14:40:20 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          nounou94:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4387938370">
+          Jean large bershka
+        </a>:
+        <span itemprop="created_at">
+          2024-04-19 23:36:55 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          barb_1:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4457583916">
+          Costume nero
+        </a>:
+        <span itemprop="created_at">
+          2024-05-04 22:02:07 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          susssve:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4450543144">
+          Bañador
+        </a>:
+        <span itemprop="created_at">
+          2024-05-04 22:09:44 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          finavalverde:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4452701694">
+          Bikini completo brasileño
+        </a>:
+        <span itemprop="created_at">
+          2024-05-05 00:29:20 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          marikamr0:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4441365587">
+          Costume
+        </a>:
+        <span itemprop="created_at">
+          2024-05-05 00:35:25 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          chloe577:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4460217058">
+          Maillot de bain verre
+        </a>:
+        <span itemprop="created_at">
+          2024-05-05 14:56:44 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          leaaa92:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4452014196">
+          Trousse de maquillage en velour
+        </a>:
+        <span itemprop="created_at">
+          2024-05-05 15:27:51 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          laiasebastia:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4459620368">
+          Bikini de Primark
+        </a>:
+        <span itemprop="created_at">
+          2024-05-06 03:19:51 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          plevy05:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4473116681">
+          Ensemble maillot 2 pièces rouge
+        </a>:
+        <span itemprop="created_at">
+          2024-05-08 00:21:42 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          sandra_gp:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4504246932">
+          Bikini rojo
+        </a>:
+        <span itemprop="created_at">
+          2024-05-14 22:26:45 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          lynayal:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4956292996">
+          Doudoune bershka noir
+        </a>:
+        <span itemprop="created_at">
+          2024-08-31 14:09:58 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mafersilvera:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4398564771">
+          Vaquero ancho de Bershka
+        </a>:
+        <span itemprop="created_at">
+          2024-08-31 21:19:34 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          myrian65:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4959427195">
+          Crop top à manche longue
+        </a>:
+        <span itemprop="created_at">
+          2024-09-01 02:38:12 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          perrine_o4:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4963832129">
+          Crop top à manche longue
+        </a>:
+        <span itemprop="created_at">
+          2024-09-01 02:42:27 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          celiia.dil:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4985614442">
+          Jean bershka
+        </a>:
+        <span itemprop="created_at">
+          2024-09-04 15:22:30 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          samuelv4597:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4218021383">
+          Whitefox Sudadera Gris
+        </a>:
+        <span itemprop="created_at">
+          2024-09-06 15:28:18 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          franckgp:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4934329141">
+          Miroir ovale
+        </a>:
+        <span itemprop="created_at">
+          2024-09-12 01:13:58 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          roberval-king10:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3122515487">
+          Miroir 
+        </a>:
+        <span itemprop="created_at">
+          2024-09-12 01:17:54 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ellea_brl:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/3210684188">
+          Miroir 
+        </a>:
+        <span itemprop="created_at">
+          2024-09-12 01:25:17 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          bkxrst:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5032186677">
+          Col roulé noir
+        </a>:
+        <span itemprop="created_at">
+          2024-09-13 00:24:43 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mongi15:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5088648899">
+          Dolcevita bianco a costine
+        </a>:
+        <span itemprop="created_at">
+          2024-09-22 23:41:32 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          maeva5544:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5126506684">
+          Col montant bershka bleu sous pull
+        </a>:
+        <span itemprop="created_at">
+          2024-09-29 12:39:30 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          capuc0:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5198857902">
+          Doudoune noire
+        </a>:
+        <span itemprop="created_at">
+          2024-10-12 17:38:18 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          maels1.8:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5232035732">
+          manteau chaud marron
+        </a>:
+        <span itemprop="created_at">
+          2024-10-17 15:04:09 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          leilasamira:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4514518397">
+          BDG Jaya Jeans
+        </a>:
+        <span itemprop="created_at">
+          2024-11-09 11:34:08 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          luisaabgrall:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5424113750">
+          Col roulé à rayures
+        </a>:
+        <span itemprop="created_at">
+          2024-11-23 08:41:02 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          lou06789:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5594018887">
+          veste noir
+        </a>:
+        <span itemprop="created_at">
+          2025-01-03 19:56:27 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          lauramp80:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5587981250">
+          Cazadora plumas , Mango
+        </a>:
+        <span itemprop="created_at">
+          2025-01-03 19:57:20 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          sushicoo:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5608726752">
+          Zara black puffer
+        </a>:
+        <span itemprop="created_at">
+          2025-01-06 01:19:07 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          giorgiacafaro:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5636890189">
+          giubbotto piumino bershka
+        </a>:
+        <span itemprop="created_at">
+          2025-01-13 01:55:47 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          noemievigneron:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5800410475">
+          Miniature voiture de collection
+        </a>:
+        <span itemprop="created_at">
+          2025-02-11 22:23:23 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          caro_lina_10:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6150421310">
+          Bikini 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2025-04-22 23:02:40 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mariaaarb:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6198951171">
+          bikini marrón
+        </a>:
+        <span itemprop="created_at">
+          2025-04-24 11:38:56 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          calmlychaotic:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6213648291">
+          Small white bag
+        </a>:
+        <span itemprop="created_at">
+          2025-04-27 16:13:26 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mddl:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6273207226">
+          Bottes Bacio&Bacio
+        </a>:
+        <span itemprop="created_at">
+          2025-05-05 21:41:11 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          leopoldine.dl:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6260824160">
+          top bleu et blanc
+        </a>:
+        <span itemprop="created_at">
+          2025-05-05 23:38:44 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          emyluschka:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6455514118">
+          Ausgewaschen Jeans BDG
+        </a>:
+        <span itemprop="created_at">
+          2025-06-05 14:05:43 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          katharina.khm:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6482677701">
+          creme/altrosa Shopper-Tasche
+        </a>:
+        <span itemprop="created_at">
+          2025-06-10 16:48:18 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          aegallego:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6494625941">
+          Bolso piel la nuevo
+        </a>:
+        <span itemprop="created_at">
+          2025-06-11 17:25:56 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          marta1184:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6487142784">
+          Bolso de mano de parfois camel
+        </a>:
+        <span itemprop="created_at">
+          2025-06-11 17:26:34 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          gelsomina2017:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6492547927">
+          Borsa da donna
+        </a>:
+        <span itemprop="created_at">
+          2025-06-11 17:37:03 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          amondex:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6495545600">
+          Bolso de Mango
+        </a>:
+        <span itemprop="created_at">
+          2025-06-11 17:44:56 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mirelasacic:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6497977087">
+          Guess Tasche
+        </a>:
+        <span itemprop="created_at">
+          2025-06-11 17:52:14 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          tiph.tiph1999:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6448801177">
+          Nike air Jordan low
+        </a>:
+        <span itemprop="created_at">
+          2025-06-17 15:51:42 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          srhbrch:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5765592338">
+          Dunk low marron 38
+        </a>:
+        <span itemprop="created_at">
+          2025-06-17 15:52:34 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          margaux2b2:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6320887933">
+          Basket Nike
+        </a>:
+        <span itemprop="created_at">
+          2025-06-17 16:15:00 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          camillegomez15:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6526353905">
+          Nike Dunk Marron
+        </a>:
+        <span itemprop="created_at">
+          2025-06-18 15:11:26 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          neyssa.dress:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6433056470">
+          Adidas ozweego
+        </a>:
+        <span itemprop="created_at">
+          2025-06-18 23:07:56 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          elise.vnz:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6737232039">
+          Robe Zara noire
+        </a>:
+        <span itemprop="created_at">
+          2025-07-24 21:10:21 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          mava28:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4916892019">
+          Robe satin
+        </a>:
+        <span itemprop="created_at">
+          2025-07-24 21:12:33 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          vonder123:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6744180978">
+          Rode jurk satijn
+        </a>:
+        <span itemprop="created_at">
+          2025-07-24 21:17:26 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          loulou90500:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6520201159">
+          Robe broderie anglaise
+        </a>:
+        <span itemprop="created_at">
+          2025-07-25 09:32:56 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          inesgadanho:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6287106097">
+          Vestido Midi com folho lateral e racha - Tam S - Novo
+        </a>:
+        <span itemprop="created_at">
+          2025-07-26 16:16:53 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          do_nanelee:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7070604007">
+          Jean Large avec couture visible
+        </a>:
+        <span itemprop="created_at">
+          2025-09-13 02:08:45 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          jentekevh:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7062682502">
+          Donkerblauwe jeans, pull&bear
+        </a>:
+        <span itemprop="created_at">
+          2025-09-13 02:09:40 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          melinafautrelle:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7209848107">
+          Cycliste womens best S
+        </a>:
+        <span itemprop="created_at">
+          2025-10-02 15:26:07 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          susi.lrd:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7205930531">
+          Womensbest Sport Crop Tshirt
+        </a>:
+        <span itemprop="created_at">
+          2025-10-02 15:26:19 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          calix21:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7632589589">
+          jogging
+        </a>:
+        <span itemprop="created_at">
+          2025-11-25 09:56:43 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          abbyconnolly12:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7664733827">
+          Leggings
+        </a>:
+        <span itemprop="created_at">
+          2025-11-29 21:06:21 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ellie_murphy11:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7682402869">
+          Purple woman’s best leggings
+        </a>:
+        <span itemprop="created_at">
+          2025-12-02 08:00:57 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          beatrizbelmonte89:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7684013672">
+          Leggins
+        </a>:
+        <span itemprop="created_at">
+          2025-12-03 18:45:02 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          leonie0827:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7693727081">
+          legging vert
+        </a>:
+        <span itemprop="created_at">
+          2025-12-03 19:47:21 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          cha-choue:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7826480224">
+          Baskets Tommy Hilfiger Blanche/Creme
+        </a>:
+        <span itemprop="created_at">
+          2026-01-01 21:04:14 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          irybuk:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7829348021">
+          Scarpe ginnastica
+        </a>:
+        <span itemprop="created_at">
+          2026-01-01 21:06:45 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          emsivv:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7878532112">
+          Polo Ralph Shoes
+        </a>:
+        <span itemprop="created_at">
+          2026-01-06 00:54:14 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          melissara.be:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7964504379">
+          Leggins Womensbest grau
+        </a>:
+        <span itemprop="created_at">
+          2026-01-17 21:52:51 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          emily222221:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7996657741">
+          lavender women’s best leggings
+        </a>:
+        <span itemprop="created_at">
+          2026-01-22 00:41:53 +0100
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ambregentes:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8724781021">
+          Bikini bleu motif fleur style grecque
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:01:11 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          agathe_dchlt:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8603419211">
+          maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:02:21 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          amelielct2:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/7203612677">
+          Maillot de bain 2 pièces zaful
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:02:50 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          emmxbm:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8751311950">
+          Maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:04:45 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          co014:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6847934038">
+          Maillot de bain
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:05:01 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          paugratin:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8281718336">
+          Maillot de bain 2 pièces femmes
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:08:47 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ramalho68:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8730560764">
+          Maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:09:22 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ledressingdejoy:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6803853754">
+          Maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:27:14 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          colinedbr:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/6230956720">
+          Maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:27:35 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          dedonista:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/1954172943">
+          2 pièces neuf
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:30:00 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          vintequitable:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/5376063147">
+          maillot de bain 2 pièces violet taille 38 95C
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:31:50 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          bleuesaphira:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4329706554">
+          Maillot de bain Banana Moon
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:33:20 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          sandrinavintage:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/2086892478">
+          Maillot 2 pièces 
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:35:25 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          zzapi:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4652182991">
+          Maillot de bain 2 pièces, violet - Tex - Taille 38
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:36:33 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          eliseguerr:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/4807666854">
+          Bikini bandeau
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:44:30 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          louane.merle:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8744540019">
+          Ensemble maillot de bain
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 01:51:53 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          marielle56400:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8760771566">
+          Maillot de bain deux pièces marron
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 14:06:00 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ludivine2513:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8761432111">
+          Maillot de bain
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 14:07:01 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          dedel230482:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8752526437">
+          Maillots bain Gémo
+        </a>:
+        <span itemprop="created_at">
+          2026-04-27 14:11:59 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          schlutti_x:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8764224366">
+          Braunes Bikini-Oberteil M/B-Körbchen
+        </a>:
+        <span itemprop="created_at">
+          2026-04-28 01:15:31 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          merlebns:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8757577754">
+          Bikini lila Neckholder M
+        </a>:
+        <span itemprop="created_at">
+          2026-04-28 01:17:01 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          pacaaa898:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8770159190">
+          Bikini braun neckholder h&m
+        </a>:
+        <span itemprop="created_at">
+          2026-04-28 22:36:26 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          ceccaclarissa:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8772786685">
+          Costume bordeaux
+        </a>:
+        <span itemprop="created_at">
+          2026-04-28 22:40:27 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          charlene182326:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8795747141">
+          Maillot de bain
+        </a>:
+        <span itemprop="created_at">
+          2026-05-01 18:22:14 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          quichaudkarine:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8814259678">
+          Maillot de bain Shein 2 pieces
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:10:21 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          margxcpl29:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8814662313">
+          Maillot de bain Etam
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:10:38 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          natalyamee:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8817604220">
+          Bikini rose
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:10:51 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          margott38:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8812061304">
+          Maillot de bain Calzedonia
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:11:44 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          justine3318:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8811494632">
+          Maillot de bain pimkie
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:11:48 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          meligebtou:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8806779934">
+          Maillot de bain 2 pièce M L
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:12:44 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          magalaine08:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8808311977">
+          Maillot de bains 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:13:28 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          francinemma:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8803599527">
+          Maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:14:31 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          audreyprevot23:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8812932548">
+          Maillot de bain 2 pièces
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:14:48 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          fevalentinevalk:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8812071278">
+          Bikini Gina Tricot
+        </a>:
+        <span itemprop="created_at">
+          2026-05-03 23:16:35 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          valna7391:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8874963951">
+          Maillot de bain kiwi 90C haut 38 bas bleu indigo
+        </a>:
+        <span itemprop="created_at">
+          2026-05-11 11:16:27 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          lapin62300:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8904167141">
+          maillot de bain
+        </a>:
+        <span itemprop="created_at">
+          2026-05-13 21:24:41 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          luvi75:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8898963400">
+          Bikini donna, taglia S
+        </a>:
+        <span itemprop="created_at">
+          2026-05-13 21:25:28 +0200
+        </span>
+      </div>
+    
+      
+      <div class="cell-description" itemscope>
+        <span itemprop="username">
+          nancycarole68:
+        </span>
+        <a itemprop="link_to_item" href="https://www.vinted.fr/items/8907993398">
+          Maillot de bain
+        </a>:
+        <span itemprop="created_at">
+          2026-05-14 17:20:42 +0200
+        </span>
+      </div>
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

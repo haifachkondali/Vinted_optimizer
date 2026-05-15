@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>export des données personnelles de Vinted</title>
+    <style type="text/css">
+      html {
+  font-family: "V-Inter", "Helvetica Neue", "Helvetica-Neue", "Arial",
+    sans-serif;
+}
+
+body {
+  background-color: #ebedee;
+  margin: 0;
+}
+
+a {
+  color: #007782;
+  text-decoration: none;
+}
+
+.header {
+  background-color: white;
+}
+
+.banner {
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.content-wrapper {
+  width: 650px;
+  margin: auto;
+}
+
+.logo {
+  max-height: 48px;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  background: #1111;
+  border: 0;
+  margin: 16px 0;
+}
+
+.spacer {
+  padding: 16px 0 0 0;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.cell-header {
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.cell-header--large {
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.cell-description {
+  color: #666;
+  line-height: 22px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.cell-images {
+  display: flex;
+}
+
+.cell-images__item {
+  flex: 0.2;
+}
+
+.cell-images__item a {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.cell-images__item img,
+.cell-images__item video {
+  width: 90%;
+}
+
+.cell-table {
+  color: #666;
+  margin: 8px 0 0 0;
+  padding-left: 24px;
+}
+
+.cell-table li {
+  margin-bottom: 6px;
+}
+
+.message-image-container {
+  width: 20%;
+  height: 120px;
+  display: inline-block;
+}
+
+.message-image-container img {
+  display: flex;
+  height: 100%;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-indent {
+  text-indent: 2em;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="content-wrapper">
+        <div class="banner">
+          <a href="../index.html"><img class="logo" src="data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iODMiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA4MyA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTYuNjQyIDExYy0uMjg1IDAtLjYzMS4yNC0xLjU2MyAxLjA1Mi0uMzMxLjEyLS42OTIuMDMtMS4xMTMuNjc3LTIuMzc1IDMuNDEzLTQuMjI0IDE2LjE3Ni01LjgwMyAxOS44Ni0uMzE2LTEuNTk0LS45NzctMTEuOTY4LTEuMjMzLTE0LjgwOS0uMDMtLjUyNi4wMy0xLjE4OC4wMy0xLjU3OCAwLTIuNjE2LS41Ny0zLjk0LTMuMTg3LTMuOTQtMS4zMjMgMC0yLjYzLjQ4Mi0zLjMyMiAxLjM1NC0uMzMuNDUtLjQ1MS43ODItLjQ1MSAxLjU5MyAwIDUuNDI4IDEuMjkzIDE0LjMyNyAyLjczNiAyMC4xMy40NTEgMS44MiAyLjA3NSAyLjE2NSAzLjYwOCAyLjE2NS43MjIgMCAxLjQ0My0uMDkgMi40NjYtLjYwMSAzLjU0Ny0xLjczIDQuNDk1LTYuNDUgNS40MTItMTEuMDM1LjE2NS0uODI3Ljk5Mi00LjgyNiAxLjM4My02LjkzLjUyNi0yLjg3MiAxLjEyNy02LjExOSAxLjQ4OC03LjMwNy4xMi0uMzYtLjEwNS0uNjMxLS40NS0uNjMxWm02MC4yNTQgMTIuOTg5Yy0uNDggMy41OTMtMi4zMTUgOS43NDItNC4zNiA5Ljc0Mi0uNTg2IDAtLjg4Ni0uNjc3LS44ODYtMS41MDQgMC0yLjM2IDEuNTkzLTcuMDggNS4yNDYtOC4yMzhabS0xNy44NDQgNC4wNDRjLjQ2Ni0yLjEwNSAyLjQ4LTUuMzIyIDQuMjg0LTUuMzIyLjMzIDAgLjUxMS4yMS40NjYuNzIyLS4xMDUgMS41OTMtMS4yOTMgNC4yNC00Ljc1IDQuNlpNODMgMTIuNjIzYzAtLjYzLS4zOS0xLjE4Ny0xLjI3OC0xLjE4Ny0uNzIxIDAtMS41NjMuMzYtMi4wOS44MTItLjYzLS4xNS0xLjQ3My4zMy0xLjU3OC45MDItLjU0MSAyLjU0LS43ODIgNS4xODYtMS4wODIgNy4zNjYtMy42MzguMzMtNi40MDUgMi4zNDUtNy43NTggNS42MzhhMTIuODI0IDEyLjgyNCAwIDAgMS0uNzgxIDEuNTc4Yy0xLjkyNSAzLjI3OC00LjMzIDUuMTcyLTYuNjkgNS4xNzItMS43MyAwLTIuNzIxLTEuMjE4LTIuODQyLTIuODcyLjYxNy4xNSAxLjIwMy4yMjYgMS43NDQuMjI2IDMuOTA5IDAgNS44OTMtMy42OTggNS44OTMtNi4xOTQgMC0yLjQyLTEuNjIzLTMuNjUzLTQuMDI5LTMuNjUzLTQuMzkuMDMtOC4wNDMgNS4yNjItOC4wNDMgMTAuMDQyIDAgMy4zOTggMS41MTkgNi4wODkgNC45NzcgNi4wODkgMi42NzUgMCA2LjM3NC0xLjQ3MyA4Ljg4NC01LjI2Mi0uMTY1IDIuNjkxLjU0MSA1LjMyMiAyLjg0MiA1LjU3OCAxLjI5My4xMiAzLjYzOC0uNjkyIDUuMjAxLTMuODc5LjEyIDIuNjQ2Ljk2MiAzLjkyNCAxLjYzOSAzLjkyNCAxLjIxOCAwIDEuOTg0LS40MzYgMi45MzEtLjQ4MS4zMDEtLjAxNS4zOTEtLjI4Ni4zOTEtLjUyNiAwLS4zOTEtLjQ1LTEuODM1LS40NS0zLjkxIDAtMy4xNzEuNjMtOC4xMzIgMS45NjktMTguMjUuMDYtLjI0LjE1LS43MzcuMTUtMS4xMTJabS02MC4xMzQgNi40OGMxLjE3MyAwIDIuMTM1LS45NjIgMi4xMzUtMi4wMTQgMC0xLjM4My0uNDIxLTIuNzA2LTEuOTg1LTIuNzA2LTEuMDY3IDAtMi45MTYgMS4yMDItMi45MTYgMi4yNCAwIDEuMjE3IDEuMzM4IDIuNDggMi43NjYgMi40OFptMzEuOTc2LS44NDJjLS42NzYtLjEzNS0xLjQxMy0uMTUtMi4xNjUtLjE1LjAzLS41MjYtLjAxNS0xLjUzNCAwLTIuNDIgMC0uMTM2LjA2LS4zNzYuMDYtLjY3NyAwLS4zLS4wNi0uNjMxLS4yNy0uOTMyLjA3NS0uMjEuMTItLjM5MS4xMi0uNTI2IDAtLjcyMi0xLjA2Ny0uOTkyLTIuMDc0LS45OTItLjg3MiAwLTEuNjg0LjMxNS0xLjk3IDEuMjYyLS40NjYgMS42NjktLjYwMSAyLjM5LS43MjEgNC4xMzQtMS4wNTMuMDYtMy4wOTcuMDc2LTMuMDUyLjcyMi4xMiAxLjY2OSAxLjcyOSAyLjIxIDIuODg2IDIuMjQtLjEzNSA0LjU4NS0zLjk2OSAxMi4wMTItNS4xNTYgMTIuMDEyLS4yMjYgMC0uMzE2LS4zNi0uMzE2LTEuMTI4IDAtMS41MDMuMzE2LTMuNTE4LjMxNi01LjY1MiAwLTEuMzIzLS4xMzYtMi41MjYtLjU0MS0zLjI5My0uNTEyLS45MTctMi4xOTUtMS4zNjgtMy41MTgtMS4zNjgtLjUxMiAwLS45MzIuMDYtMS4yNjMuMTgtMi4xOTUuODg4LTQuMDQ0IDUuODc5LTQuNzM2IDYuOTkxLjMzMS0zLjAyMS44MjctNS4zODIuODI3LTYuNjE0IDAtLjY5Mi0uNjE2LTEuMzA4LTEuMzA4LTEuMzA4LS4yNyAwLS41MS4wOS0uNzM2LjMtLjk5My4zNjEtMi4zMTYgMC0yLjU0MSAxLjQxMy0uMDYuMzc2LS4xMzUuODI3LS4xNjUgMS4zMzktLjI0MSAzLjY2OC0zLjkxIDEwLjQ2My01Ljc4OCAxMC40NjMtLjQ2NiAwLS41NzItLjYwMS0uNTcyLTEuMzY4IDAtMi41NTYgMS4zMjMtNy45MzggMS4zNTMtOS4wMi4wNzYtLjE2Ni4xMi0uMzYxLjEyLS41MjYgMC0xLjAyMy0xLjIwMi0yLjAxNS0yLjQzNS0yLjAxNS0uMzYgMC0uNjE2LS4wNzUtLjkwMi0uMDc1LS4xOCAwLS4zNzYuMDMtLjU4Ni4xNjUtMS4zNjguODcyLTIuNTcgNS44NjMtMi41NyA4LjkzIDAgMy4zODMgMS45NjkgNi4wODkgNS4wOTYgNi4wODkgMi4yNCAwIDQuMTM0LTIuMDQ1IDUuNzQyLTQuODcxIDAgLjQzNi0uMDkgMi41NTUgMCAzLjc1OC4wNi44MjcuOTE3LjQ2NiAxLjk1NS44ODcuMzkuMzMuNzUxLjQ4MSAxLjA2Ny40ODEuNTI2IDAgLjkzMi0uNDY2IDEuMjMzLTEuMjc4IDEuMjMzLTMuMzgyIDQuMjEtMTAuOTc0IDUuMDUxLTEwLjk3NC42MzEgMC0uMDE1IDQuODg2LS4wMTUgNy4zMDYgMCAxLjM4My4xMzUgMi41NzEuNjE2IDMuMDgyLjg4Ny45MzIgMS44MzQgMS4zODMgMi44MjcgMS4zODMgMi4xOTUgMCA0LjUxLTIuMzQ1IDYuNDA0LTYuNzA1LS4xMiAxLjg2NC0uMTM1IDIuNDM2LS4xMzUgMy4wODIgMCAxLjA4Mi4wNiAyLjI4NS4yMSAzLjE1Ny4wOS40MjEuMTM2LjcyMi41MTEuOTkyLjUxMS4yODYuOTc3LjQ1MSAxLjIzMy42MzIuNTg2LjI4NS41NDEuNDM2IDEuMzUzLjQzNi4yODYgMCAuNjc3LS4yNy43MzctLjkxNy43MjEtNy4xNDEgMS40NzMtMTUuOTUgMS40NzMtMTUuOTUuNDgxLS4wMTYgMS44NS0uMzYyIDMuMTI3LS41MTIuNTQxLS4wNiAxLjE4OC0uMzkgMS4xODgtLjc4MiAwLS4zOS0uODU3LTEuMTQyLTEuOTctMS4zODNaIiBmaWxsPSIjMDA3NzgyIi8+PC9zdmc+Cg==" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="cell">
+  <div class="cell-header cell-header--large">
+    Notifications reçues
+  </div>
+
+  <div class="cell-description">
+    Les notifications et avertissements envoyés par Vinted 
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+
+  
+    <div class="cell" itemscope>
+      <div class="cell-header--medium" itemprop="created_at">
+        2025-11-08 23:14:19 +0000
+      </div>
+
+      <div class="cell-description">
+        <span itemprop="body">
+            <p dir="ltr">Bonjour haifachkon,</p><p dir="ltr">Il semblerait que certaines photos figurant dans vos annonces soient <b>des images protégées par le droit d'auteur</b> appartenant à une autre personne, ce qui va à l'encontre de nos <a href="https://vinted.fr/catalog-rules">Règles du catalogue</a>.</p><p dir="ltr"><b>Par conséquent, nous avons dû supprimer une ou plusieurs de vos annonces.</b></p><p dir="ltr">Nous avons dû prendre cette mesure, car mettre en ligne des photos que vous n'avez pas prises vous-mêmes (ou dont vous ne détenez pas les droits) enfreint les lois sur le droit d'auteur. Le propriétaire de ces photos pourrait intenter une action en justice, ce qui pourrait entraîner des amendes.</p><p dir="ltr">Pour rappel, si nous devions à nouveau être amenés à supprimer des annonces similaires à celles-ci, nous pourrions être amenés à bloquer de façon temporaire votre compte par mesure de précaution, conformément à nos <a href="https://vinted.fr/terms_and_conditions">Termes et conditions</a>. </p><p dir="ltr">Les types de photos suivants ne peuvent pas être utilisés dans les annonces publiées sur Vinted : </p><ul><li dir="ltr" aria-level="1"><p dir="ltr" role="presentation">photos prises sur Internet </p></li><li dir="ltr" aria-level="1"><p dir="ltr" role="presentation">photos issues d'une banque d'images</p></li><li dir="ltr" aria-level="1"><p dir="ltr" role="presentation">captures d'écran d'autres sites Web (à l'exception des factures, qui ne doivent pas être l'image principale ou la seule image de l'annonce)</p></li><li dir="ltr" aria-level="1"><p dir="ltr" role="presentation">photos prises par d'autres membres</p></li></ul><p dir="ltr">À la place, assurez-vous d'<b>utiliser des photos que vous avez prises vous-mêmes</b>. En savoir plus sur <a href="/help/48">les photos à mettre en ligne</a>. </p><p dir="ltr">Merci pour votre compréhension,<br>L'équipe Vinted</p>
+          </span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+  
+    <div class="cell" itemscope>
+      <div class="cell-header--medium" itemprop="created_at">
+        2025-01-23 20:02:28 +0000
+      </div>
+
+      <div class="cell-description">
+        <span itemprop="body">
+            <p><span style="font-weight: 400;">Bonjour </span><span style="font-weight: 400;">haifachkon</span><span style="font-weight: 400;">,</span></p><p><span style="font-weight: 400;">Nous avons des raisons de penser que certaines de vos annonces contiennent des photos qui</span><b> </b><span style="font-weight: 400;">violent la l&eacute;gislation relative aux droits d'auteur, ce qui est contraire &agrave; nos </span><a href="https://vinted.fr/catalog-rules"><span style="font-weight: 400;">R&egrave;gles du catalogue</span></a><span style="font-weight: 400;">.</span><span style="font-weight: 400;"><br /></span>Par cons&eacute;quent, nous avons d&ucirc; supprimer une ou plusieurs de vos annonces.</p><p><span style="font-weight: 400;">❌ Lorsque vous publiez un article sur Vinted, vous ne pouvez pas utiliser&nbsp;:</span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">1️⃣ Des photos issues d'internet (m&ecirc;me avec autorisation)</span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">2️⃣ Des photos issues d'une banque d'images</span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">3️⃣ Des captures d'&eacute;cran d'autres sites internet (&agrave; l'exception des factures, qui ne doivent pas &ecirc;tre l'image principale ou la seule image de l'annonce)</span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">4️⃣ Des photos prises par d'autres membres</span></p><p><span style="font-weight: 400;">Le propri&eacute;taire de ces photos pourrait intenter une action en justice, ce qui pourrait entra&icirc;ner des sanctions financi&egrave;res.</span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">✅ </span><span style="font-weight: 400;">Utilisez plut&ocirc;t vos propres photos lorsque vous publiez des articles sur Vinted</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;"> Si vous n'avez plus la photo originale, vous pouvez utiliser une capture d'&eacute;cran.</span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">Nous disposons de pratiques internes, d'outils de d&eacute;tection automatique et de rapports de tiers pour nous aider &agrave; identifier ce type de probl&egrave;mes. &Agrave; l'aide de ces m&eacute;thodes, nous &eacute;valuons attentivement toute utilisation abusive de la plateforme et prenons les mesures n&eacute;cessaires. </span><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">⚠️ Si vous enfreignez &agrave; plusieurs reprises nos R&egrave;gles du catalogue, nous n'aurons pas d'autre choix que de suspendre </span><b>votre compte.</b><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">Veuillez noter que nous ne pouvons pas rembourser les services payants (tels qu'un Boost ou un Dressing en Vitrine) si une annonce enfreint nos r&egrave;gles.</span></p><p><span style="font-weight: 400;">Vous trouverez plus d'informations &agrave; ce sujet ci-apr&egrave;s&nbsp;:</span></p><ul><li style="font-weight: 400;" aria-level="1"><a href="https://vinted.fr/help/48?thread_id="><span style="font-weight: 400;">Quelles photos mettre en ligne</span></a></li><li style="font-weight: 400;" aria-level="1"><a href="https://vinted.fr/terms-and-conditions"><span style="font-weight: 400;">Termes et conditions</span></a></li><li style="font-weight: 400;" aria-level="1"><a href="https://vinted.fr/catalog-rules"><span style="font-weight: 400;">R&egrave;gles du catalogue</span></a><span style="font-weight: 400;"> (la liste des articles interdits n'est pas exhaustive et ne doit &ecirc;tre utilis&eacute;e qu'&agrave; titre indicatif)</span></li></ul><p><span style="font-weight: 400;">Merci de votre compr&eacute;hension,</span></p><p><span style="font-weight: 400;">L'&eacute;quipe Vinted</span></p>
+          </span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+  
+    <div class="cell" itemscope>
+      <div class="cell-header--medium" itemprop="created_at">
+        2024-03-08 23:06:02 +0000
+      </div>
+
+      <div class="cell-description">
+        <span itemprop="body">
+            <p>Bonjour haifachkon,</p><p>Il semble que tu as utilis&eacute; Vinted d'une mani&egrave;re qui va &agrave; l'encontre de nos Termes et conditions. Nous avons donc temporairement restreint ton compte le temps d&rsquo;examiner la situation. Nous surveillons les abus potentiels relatifs &agrave; la plateforme &agrave; l&rsquo;aide d&rsquo;outils automatis&eacute;s et de signalements de tiers qui ont d&eacute;tect&eacute; le contenu en cours de mod&eacute;ration.</p><p>Tant que ton compte est restreint, tu ne peux pas acheter d'articles ou ajouter de nouveaux modes de paiement.&nbsp;</p><p>Nous reviendrons vers toi d&egrave;s que nous aurons termin&eacute; notre examen. Cela peut prendre jusqu&rsquo;&agrave; 24 heures.</p><p>Merci de ta compr&eacute;hension,<br />L&rsquo;&eacute;quipe Vinted</p>
+          </span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+  
+    <div class="cell" itemscope>
+      <div class="cell-header--medium" itemprop="created_at">
+        2024-03-08 16:12:05 +0000
+      </div>
+
+      <div class="cell-description">
+        <span itemprop="body">
+            <p><span style="font-weight: 400;">Bonjour haifachkon,</span></p><p><span style="font-weight: 400;">Nous avons des raisons de penser que vos annonces contiennent des </span><b>photos de mauvaise qualit&eacute;</b><span style="font-weight: 400;">, ce qui est contraire &agrave; nos</span><a href="https://vinted.fr/catalog-rules"><span style="font-weight: 400;"> </span><span style="font-weight: 400;">r&egrave;gles du catalogue</span></a><span style="font-weight: 400;">.</span></p><p><span style="font-weight: 400;">Par cons&eacute;quent, nous devons masquer l&rsquo;annonce ou les annonces suivante(s) :</span></p><p><span style="font-weight: 400;"></span></p><p><span style="font-weight: 400;">Jean vintage Versace </span></p><p><span style="font-weight: 400;"></span></p><p><span style="font-weight: 400;">✅ Pour rendre l&rsquo;annonce &agrave; nouveau visible, merci </span><b>d&rsquo;ajouter &agrave; nouveau des photos &agrave; votre annonce</b><span style="font-weight: 400;"> en suivant ces instructions :</span></p><ul><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Les photos </span><b>ne doivent pas &ecirc;tre </b><span style="font-weight: 400;">: floues, sombres</span><em><span style="font-weight: 400;">.</span></em></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Les photos ne doivent pas &ecirc;tre de mauvaise qualit&eacute;, c'est-&agrave;-dire que l'article doit &ecirc;tre clairement visible sur la premi&egrave;re photo.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">L&rsquo;annonce ne doit pas contenir de collages de photos.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Les articles photographi&eacute;s sur un fond uni se vendent plus rapidement. Essayez de pr&eacute;senter l&rsquo;article de mani&egrave;re soign&eacute;e.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Si possible, essayez de suspendre ou de porter votre article pour en montrer la forme.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Veillez &agrave; ce que les photos ne comportent pas de filigrane ou de lien vers d'autres plateformes de vente.</span></li></ul><p><span style="font-weight: 400;">Pour mettre &agrave; jour votre annonce :</span></p><p><span style="font-weight: 400;">1️⃣ Allez sur votre profil et rep&eacute;rez l&rsquo;annonce marqu&eacute;e en rouge dans votre dressing</span></p><p><span style="font-weight: 400;">2️⃣ Appuyez sur l'annonce, puis sur l&rsquo;ic&ocirc;ne &agrave; 3 points (⋮) et sur &laquo; Modifier &raquo; (ou &laquo; Modifier l'annonce &raquo; depuis la version web)</span></p><p><span style="font-weight: 400;">3️⃣ </span><b>Reprenez des photos</b><span style="font-weight: 400;"> pour en am&eacute;liorer la qualit&eacute;&nbsp;</span></p><p><span style="font-weight: 400;">4️⃣ </span><b>Ajoutez les photos </b><span style="font-weight: 400;">et cliquer sur </span><b>Sauvegarder</b></p><p><span style="font-weight: 400;">❗ Il n'y a pas d'autre moyen de r&eacute;activer votre annonce et elle restera masqu&eacute;e tant que vous n'aurez pas effectu&eacute; ces actions.</span></p><p><span style="font-weight: 400;">Nous disposons de pratiques internes et de rapports de tiers pour nous aider &agrave; identifier ce type de probl&egrave;mes. &Agrave; l&rsquo;aide de ces m&eacute;thodes, nous &eacute;valuons attentivement les utilisations abusives de la plateforme et prenons les mesures n&eacute;cessaires.&nbsp;</span></p><p><span style="font-weight: 400;">⚠️ Si vous enfreignez de mani&egrave;re r&eacute;p&eacute;t&eacute;e les r&egrave;gles du catalogue, nous serons dans l&rsquo;obligation de </span><b>bloquer d&eacute;finitivement votre compte</b><span style="font-weight: 400;">.</span></p><p><span style="font-weight: 400;">Notez que nous ne sommes pas en mesure de rembourser le co&ucirc;t des services payants (tels que Boost ou Dressing en Vitrine) lorsqu&rsquo;une annonce enfreint nos r&egrave;gles.</span></p><p><span style="font-weight: 400;">Vous trouverez plus d&rsquo;informations &agrave; ce sujet ici :</span></p><ul><li style="font-weight: 400;" aria-level="1"><a href="https://vinted.fr/help/62?thread_id="><span style="font-weight: 400;">Pourquoi votre annonce a &eacute;t&eacute; masqu&eacute;e ou supprim&eacute;e</span></a></li><li style="font-weight: 400;" aria-level="1"><a href="https://vinted.fr/terms-and-conditions"><span style="font-weight: 400;">Termes et Conditions</span></a></li><li style="font-weight: 400;" aria-level="1"><a href="https://vinted.fr/catalog-rules"><span style="font-weight: 400;">R&egrave;gles du catalogue</span></a><span style="font-weight: 400;"> (la liste d&rsquo;articles interdits n'est pas exhaustive et ne doit &ecirc;tre utilis&eacute;e qu'&agrave; titre indicatif)</span></li></ul><p><span style="font-weight: 400;">Merci pour votre compr&eacute;hension,</span></p><p><span style="font-weight: 400;">L&rsquo;&eacute;quipe Vinted</span></p>
+
+Ce contenu a été détecté automatiquement.
+
+          </span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+  
+    <div class="cell" itemscope>
+      <div class="cell-header--medium" itemprop="created_at">
+        2024-03-08 15:54:05 +0000
+      </div>
+
+      <div class="cell-description">
+        <span itemprop="body">
+            <p><span style="font-weight: 400;">Bonjour haifachkon,</span></p><p>Nous avons constat&eacute; que tes annonces n&rsquo;&eacute;taient pas conformes aux exigences en mati&egrave;re d&rsquo;authenticit&eacute;.</p><p>Par cons&eacute;quent, nous devons masquer les annonces suivantes :</p><p><span style="font-weight: 400;"></span></p><p><span style="font-weight: 400;">Jean vintage Versace </span></p><p><span style="font-weight: 400;"></span></p><p>✅ Pour que ces annonces soient de nouveau visibles, tu es pri&eacute;&middot;e de les mettre &agrave; jour. Ajoute ou prends de nouvelles photos des &eacute;l&eacute;ments suivants :</p><p><span style="font-weight: 400;"></span></p><p><span style="font-weight: 400;">étiquette au col ou à la taille</span></p><p><span style="font-weight: 400;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></p><p><span style="font-weight: 400;">étiquette de la taille</span></p><p><span style="font-weight: 400;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></p><p><span style="font-weight: 400;">étiquette d'entretien</span></p><p><span style="font-weight: 400;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span></span></p><p>Clique ici pour mettre &agrave; jour tes annonces :</p><p><span style="font-weight: 400;">https://www.vinted.fr/e/item_edit?id=4197212116</span></p><p>Il n&rsquo;y a pas d&rsquo;autre moyen de r&eacute;activer une annonce, celle-ci restera masqu&eacute;e jusqu&rsquo;&agrave; ce que tu proc&egrave;des comme indiqu&eacute;.</p><p>Notre &eacute;quipe responsable de la qualit&eacute; du contenu examinera ton annonce une fois que tu l&rsquo;auras mise &agrave; jour. Tu recevras une notification &agrave; l&rsquo;issue de cet examen.</p><p><span style="font-weight: 400;">Si tu as des doutes concernant l&rsquo;authenticit&eacute; de ton article, tu es pri&eacute;&middot;e de retirer imm&eacute;diatement ton annonce. Garde &agrave; l&rsquo;esprit que </span><b>la vente de contrefa&ccedil;ons est interdite par la loi</b><span style="font-weight: 400;"> et strictement interdite sur Vinted.</span></p><p><span style="font-weight: 400;">Des pratiques internes, des outils de d&eacute;tection automatique et des signalements de tiers nous aident &agrave; identifier de tels probl&egrave;mes. Gr&acirc;ce &agrave; ces m&eacute;thodes, nous examinons attentivement les utilisations abusives de la plateforme et prenons les mesures n&eacute;cessaires.</span><span style="font-weight: 400;">&nbsp;</span></p><p><span style="font-weight: 400;">⚠️ </span><span style="font-weight: 400;">Si tu enfreins &agrave; plusieurs reprises nos </span><a href="https://www.vinted.fr/catalog-rules"><span style="font-weight: 400;">r&egrave;gles du catalogue</span></a><span style="font-weight: 400;">, nous serons dans l&rsquo;obligation de bloquer d&eacute;finitivement ton compte.</span></p><p><span style="font-weight: 400;">Sache que nous ne sommes pas en mesure de rembourser le co&ucirc;t des services payants (tels qu&rsquo;un Boost ou un Dressing en Vitrine) appliqu&eacute;s &agrave; une annonce qui enfreint nos r&egrave;gles.</span></p><p><span style="font-weight: 400;">Tu trouveras ici plus d&rsquo;informations &agrave; ce sujet&nbsp;:</span></p><ul><li style="font-weight: 400;" aria-level="1"><a href="https://www.vinted.fr/terms_and_conditions"><span style="font-weight: 400;">Termes et Conditions</span></a></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><a href="https://www.vinted.fr/catalog-rules">R&egrave;gles du catalogue</a> (notre liste d&rsquo;articles interdits n&rsquo;est pas exhaustive et doit uniquement &ecirc;tre consid&eacute;r&eacute;e comme un guide)</span></span></span></li></ul><p><span style="font-weight: 400;">Merci de ta compr&eacute;hension,</span></p><p><span style="font-weight: 400;">L&rsquo;&eacute;quipe Vinted</span></p>
+
+Ce contenu a été détecté automatiquement.
+
+          </span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+  
+
+    </div>
+  </body>
+</html>

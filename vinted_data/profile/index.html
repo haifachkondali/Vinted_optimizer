@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>export des données personnelles de Vinted</title>
+    <style type="text/css">
+      html {
+  font-family: "V-Inter", "Helvetica Neue", "Helvetica-Neue", "Arial",
+    sans-serif;
+}
+
+body {
+  background-color: #ebedee;
+  margin: 0;
+}
+
+a {
+  color: #007782;
+  text-decoration: none;
+}
+
+.header {
+  background-color: white;
+}
+
+.banner {
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.content-wrapper {
+  width: 650px;
+  margin: auto;
+}
+
+.logo {
+  max-height: 48px;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  background: #1111;
+  border: 0;
+  margin: 16px 0;
+}
+
+.spacer {
+  padding: 16px 0 0 0;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.cell-header {
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.cell-header--large {
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.cell-description {
+  color: #666;
+  line-height: 22px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.cell-images {
+  display: flex;
+}
+
+.cell-images__item {
+  flex: 0.2;
+}
+
+.cell-images__item a {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.cell-images__item img,
+.cell-images__item video {
+  width: 90%;
+}
+
+.cell-table {
+  color: #666;
+  margin: 8px 0 0 0;
+  padding-left: 24px;
+}
+
+.cell-table li {
+  margin-bottom: 6px;
+}
+
+.message-image-container {
+  width: 20%;
+  height: 120px;
+  display: inline-block;
+}
+
+.message-image-container img {
+  display: flex;
+  height: 100%;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-indent {
+  text-indent: 2em;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="content-wrapper">
+        <div class="banner">
+          <a href="../index.html"><img class="logo" src="data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iODMiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA4MyA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTYuNjQyIDExYy0uMjg1IDAtLjYzMS4yNC0xLjU2MyAxLjA1Mi0uMzMxLjEyLS42OTIuMDMtMS4xMTMuNjc3LTIuMzc1IDMuNDEzLTQuMjI0IDE2LjE3Ni01LjgwMyAxOS44Ni0uMzE2LTEuNTk0LS45NzctMTEuOTY4LTEuMjMzLTE0LjgwOS0uMDMtLjUyNi4wMy0xLjE4OC4wMy0xLjU3OCAwLTIuNjE2LS41Ny0zLjk0LTMuMTg3LTMuOTQtMS4zMjMgMC0yLjYzLjQ4Mi0zLjMyMiAxLjM1NC0uMzMuNDUtLjQ1MS43ODItLjQ1MSAxLjU5MyAwIDUuNDI4IDEuMjkzIDE0LjMyNyAyLjczNiAyMC4xMy40NTEgMS44MiAyLjA3NSAyLjE2NSAzLjYwOCAyLjE2NS43MjIgMCAxLjQ0My0uMDkgMi40NjYtLjYwMSAzLjU0Ny0xLjczIDQuNDk1LTYuNDUgNS40MTItMTEuMDM1LjE2NS0uODI3Ljk5Mi00LjgyNiAxLjM4My02LjkzLjUyNi0yLjg3MiAxLjEyNy02LjExOSAxLjQ4OC03LjMwNy4xMi0uMzYtLjEwNS0uNjMxLS40NS0uNjMxWm02MC4yNTQgMTIuOTg5Yy0uNDggMy41OTMtMi4zMTUgOS43NDItNC4zNiA5Ljc0Mi0uNTg2IDAtLjg4Ni0uNjc3LS44ODYtMS41MDQgMC0yLjM2IDEuNTkzLTcuMDggNS4yNDYtOC4yMzhabS0xNy44NDQgNC4wNDRjLjQ2Ni0yLjEwNSAyLjQ4LTUuMzIyIDQuMjg0LTUuMzIyLjMzIDAgLjUxMS4yMS40NjYuNzIyLS4xMDUgMS41OTMtMS4yOTMgNC4yNC00Ljc1IDQuNlpNODMgMTIuNjIzYzAtLjYzLS4zOS0xLjE4Ny0xLjI3OC0xLjE4Ny0uNzIxIDAtMS41NjMuMzYtMi4wOS44MTItLjYzLS4xNS0xLjQ3My4zMy0xLjU3OC45MDItLjU0MSAyLjU0LS43ODIgNS4xODYtMS4wODIgNy4zNjYtMy42MzguMzMtNi40MDUgMi4zNDUtNy43NTggNS42MzhhMTIuODI0IDEyLjgyNCAwIDAgMS0uNzgxIDEuNTc4Yy0xLjkyNSAzLjI3OC00LjMzIDUuMTcyLTYuNjkgNS4xNzItMS43MyAwLTIuNzIxLTEuMjE4LTIuODQyLTIuODcyLjYxNy4xNSAxLjIwMy4yMjYgMS43NDQuMjI2IDMuOTA5IDAgNS44OTMtMy42OTggNS44OTMtNi4xOTQgMC0yLjQyLTEuNjIzLTMuNjUzLTQuMDI5LTMuNjUzLTQuMzkuMDMtOC4wNDMgNS4yNjItOC4wNDMgMTAuMDQyIDAgMy4zOTggMS41MTkgNi4wODkgNC45NzcgNi4wODkgMi42NzUgMCA2LjM3NC0xLjQ3MyA4Ljg4NC01LjI2Mi0uMTY1IDIuNjkxLjU0MSA1LjMyMiAyLjg0MiA1LjU3OCAxLjI5My4xMiAzLjYzOC0uNjkyIDUuMjAxLTMuODc5LjEyIDIuNjQ2Ljk2MiAzLjkyNCAxLjYzOSAzLjkyNCAxLjIxOCAwIDEuOTg0LS40MzYgMi45MzEtLjQ4MS4zMDEtLjAxNS4zOTEtLjI4Ni4zOTEtLjUyNiAwLS4zOTEtLjQ1LTEuODM1LS40NS0zLjkxIDAtMy4xNzEuNjMtOC4xMzIgMS45NjktMTguMjUuMDYtLjI0LjE1LS43MzcuMTUtMS4xMTJabS02MC4xMzQgNi40OGMxLjE3MyAwIDIuMTM1LS45NjIgMi4xMzUtMi4wMTQgMC0xLjM4My0uNDIxLTIuNzA2LTEuOTg1LTIuNzA2LTEuMDY3IDAtMi45MTYgMS4yMDItMi45MTYgMi4yNCAwIDEuMjE3IDEuMzM4IDIuNDggMi43NjYgMi40OFptMzEuOTc2LS44NDJjLS42NzYtLjEzNS0xLjQxMy0uMTUtMi4xNjUtLjE1LjAzLS41MjYtLjAxNS0xLjUzNCAwLTIuNDIgMC0uMTM2LjA2LS4zNzYuMDYtLjY3NyAwLS4zLS4wNi0uNjMxLS4yNy0uOTMyLjA3NS0uMjEuMTItLjM5MS4xMi0uNTI2IDAtLjcyMi0xLjA2Ny0uOTkyLTIuMDc0LS45OTItLjg3MiAwLTEuNjg0LjMxNS0xLjk3IDEuMjYyLS40NjYgMS42NjktLjYwMSAyLjM5LS43MjEgNC4xMzQtMS4wNTMuMDYtMy4wOTcuMDc2LTMuMDUyLjcyMi4xMiAxLjY2OSAxLjcyOSAyLjIxIDIuODg2IDIuMjQtLjEzNSA0LjU4NS0zLjk2OSAxMi4wMTItNS4xNTYgMTIuMDEyLS4yMjYgMC0uMzE2LS4zNi0uMzE2LTEuMTI4IDAtMS41MDMuMzE2LTMuNTE4LjMxNi01LjY1MiAwLTEuMzIzLS4xMzYtMi41MjYtLjU0MS0zLjI5My0uNTEyLS45MTctMi4xOTUtMS4zNjgtMy41MTgtMS4zNjgtLjUxMiAwLS45MzIuMDYtMS4yNjMuMTgtMi4xOTUuODg4LTQuMDQ0IDUuODc5LTQuNzM2IDYuOTkxLjMzMS0zLjAyMS44MjctNS4zODIuODI3LTYuNjE0IDAtLjY5Mi0uNjE2LTEuMzA4LTEuMzA4LTEuMzA4LS4yNyAwLS41MS4wOS0uNzM2LjMtLjk5My4zNjEtMi4zMTYgMC0yLjU0MSAxLjQxMy0uMDYuMzc2LS4xMzUuODI3LS4xNjUgMS4zMzktLjI0MSAzLjY2OC0zLjkxIDEwLjQ2My01Ljc4OCAxMC40NjMtLjQ2NiAwLS41NzItLjYwMS0uNTcyLTEuMzY4IDAtMi41NTYgMS4zMjMtNy45MzggMS4zNTMtOS4wMi4wNzYtLjE2Ni4xMi0uMzYxLjEyLS41MjYgMC0xLjAyMy0xLjIwMi0yLjAxNS0yLjQzNS0yLjAxNS0uMzYgMC0uNjE2LS4wNzUtLjkwMi0uMDc1LS4xOCAwLS4zNzYuMDMtLjU4Ni4xNjUtMS4zNjguODcyLTIuNTcgNS44NjMtMi41NyA4LjkzIDAgMy4zODMgMS45NjkgNi4wODkgNS4wOTYgNi4wODkgMi4yNCAwIDQuMTM0LTIuMDQ1IDUuNzQyLTQuODcxIDAgLjQzNi0uMDkgMi41NTUgMCAzLjc1OC4wNi44MjcuOTE3LjQ2NiAxLjk1NS44ODcuMzkuMzMuNzUxLjQ4MSAxLjA2Ny40ODEuNTI2IDAgLjkzMi0uNDY2IDEuMjMzLTEuMjc4IDEuMjMzLTMuMzgyIDQuMjEtMTAuOTc0IDUuMDUxLTEwLjk3NC42MzEgMC0uMDE1IDQuODg2LS4wMTUgNy4zMDYgMCAxLjM4My4xMzUgMi41NzEuNjE2IDMuMDgyLjg4Ny45MzIgMS44MzQgMS4zODMgMi44MjcgMS4zODMgMi4xOTUgMCA0LjUxLTIuMzQ1IDYuNDA0LTYuNzA1LS4xMiAxLjg2NC0uMTM1IDIuNDM2LS4xMzUgMy4wODIgMCAxLjA4Mi4wNiAyLjI4NS4yMSAzLjE1Ny4wOS40MjEuMTM2LjcyMi41MTEuOTkyLjUxMS4yODYuOTc3LjQ1MSAxLjIzMy42MzIuNTg2LjI4NS41NDEuNDM2IDEuMzUzLjQzNi4yODYgMCAuNjc3LS4yNy43MzctLjkxNy43MjEtNy4xNDEgMS40NzMtMTUuOTUgMS40NzMtMTUuOTUuNDgxLS4wMTYgMS44NS0uMzYyIDMuMTI3LS41MTIuNTQxLS4wNiAxLjE4OC0uMzkgMS4xODgtLjc4MiAwLS4zOS0uODU3LTEuMTQyLTEuOTctMS4zODNaIiBmaWxsPSIjMDA3NzgyIi8+PC9zdmc+Cg==" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="cell">
+  <div class="cell-header cell-header--large">
+    Détails du profil
+  </div>
+
+  <div class="cell-description">
+    Tes données de contact, tes informations en tant que membre de la communauté et celles de la section À propos de toi de ton profil.
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="cell" itemscope>
+  <div class="cell-header">
+    Information générale concernant mon profil
+  </div>
+
+  
+  <div class="cell-images">
+    <div class="cell-images__item">
+      <a href="photos/avatar/01_02573_gyRoW912uLxVZ26v8sFWVijc.webp" target="_blank">
+        <img src="photos/avatar/01_02573_gyRoW912uLxVZ26v8sFWVijc.webp" itemprop="avatar">
+      </a>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+
+<div class="cell-description">
+  Identifiant utilisateur:
+  <span itemprop="user_id">
+      161248650
+    </span>
+</div>
+
+<div class="cell-description">
+  Connexion:
+  <span itemprop="login">
+      haifachkon
+    </span>
+</div>
+
+<div class="cell-description">
+  Date de création du compte:
+  <span itemprop="created_on">
+      2023-09-14
+    </span>
+</div>
+
+<div class="cell-description">
+  Vrai nom:
+  <span itemprop="real_name">
+      haifa chkoundali
+    </span>
+</div>
+
+<div class="cell-description">
+  E-mail:
+  <span itemprop="email">
+      haifachkondali@gmail.com
+    </span>
+</div>
+
+<div class="cell-description">
+  Pays:
+  <span itemprop="user_country">
+      France
+    </span>
+</div>
+
+<div class="cell-description">
+  Ville:
+  <span itemprop="user_city">
+      Villeurbanne
+    </span>
+</div>
+
+<div class="cell-description">
+  Langue de l'appli:
+  <span itemprop="user_language">
+      Français
+    </span>
+</div>
+
+<div class="cell-description">
+  Genre:
+  <span itemprop="gender">
+      Femme
+    </span>
+</div>
+
+
+
+
+  <div class="cell-description">
+    Anniversaire:
+    <span itemprop="birthday">
+        2003-12-25
+      </span>
+  </div>
+
+
+
+  
+    <div class="cell-description">
+      Numéros de téléphone:
+    </div>
+
+    <ul class="cell-table">
+      
+        <li itemscope>
+          <span itemprop="phone_number_">
+            +33775854230
+          </span>
+          <span itemprop="phone_number__verified"
+                content="true"></span>
+
+          
+            (Verifié)
+          
+        </li>
+      
+    </ul>
+  
+
+  
+  
+
+  
+    
+      <div class="cell-description">
+        Statut de vérification de l'identifiant:
+        <span itemprop="verification_status">
+          verified
+        </span>
+      </div>
+    
+  
+</div>
+
+<div class="spacer"></div>
+
+
+
+
+
+
+  <div class="cell" itemscope>
+    <div class="cell-header">
+      Informations du profil Google
+    </div>
+
+    <div class="cell-description">
+      Indentifiant utilisateur:
+      <span itemprop="google_user_id">
+        103598542278321090572
+      </span>
+    </div>
+
+    <div class="cell-description">
+      Prénom:
+      <span itemprop="given_name">
+        Haifa
+      </span>
+    </div>
+
+    <div class="cell-description">
+      Nom de famille:
+      <span itemprop="family_name">
+        Chkondali
+      </span>
+    </div>
+
+    <div class="cell-description">
+      E-mail:
+      <span itemprop="email">
+        haifachkondali@gmail.com
+      </span>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+
+
+
+    </div>
+  </body>
+</html>
